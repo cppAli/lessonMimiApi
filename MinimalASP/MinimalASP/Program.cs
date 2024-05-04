@@ -1,5 +1,7 @@
+using MApi2.Middleware;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.ApplicationParts;
 using Microsoft.IdentityModel.Tokens;
 using MinimalApi.Auth;
 using MinimalASP.Middleware;
@@ -33,7 +35,11 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 var app = builder.Build();
 
-app.UseMiddleware<CustomMiddleware>();
+//app.UseMiddleware<CustomMiddleware>();
+//app.UseMiddleware<RequestLoggingMiddleware>();
+//app.UseMiddleware<RequestOneLoggingMiddleware>();
+//app.UseMiddleware<RequestSecondLoggingMiddleware>();
+app.UseMiddleware<HeaderValidationMiddleware>();
 
 // Configure the HTTP request pipeline.
 app.UseSwagger();
