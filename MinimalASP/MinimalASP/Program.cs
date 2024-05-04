@@ -39,7 +39,7 @@ var app = builder.Build();
 //app.UseMiddleware<RequestLoggingMiddleware>();
 //app.UseMiddleware<RequestOneLoggingMiddleware>();
 //app.UseMiddleware<RequestSecondLoggingMiddleware>();
-app.UseMiddleware<HeaderValidationMiddleware>();
+//app.UseMiddleware<HeaderValidationMiddleware>();
 
 // Configure the HTTP request pipeline.
 app.UseSwagger();
